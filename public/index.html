@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sitio web de la Unidad 2: Control de versiones con Git, GitHub y GitHub Actions.">
+  <title>Control de Versiones | Inicio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">&lt;/&gt; Control de Versiones</span>
+    <nav>
+      <a href="#que-es">¿Qué es?</a>
+      <a href="#flujo">Flujo de trabajo</a>
+      <a href="#comandos">Comandos</a>
+      <a href="#automatizacion">Automatización</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="tag">Unidad 2 · Desarrollo Web Profesional</p>
+      <h1>Control de versiones con Git y GitHub</h1>
+      <p class="lead">Un sitio publicado de forma automática: cada cambio se guarda en el historial,
+        se revisa mediante una rama y se despliega con un flujo de trabajo de GitHub Actions.</p>
+      <a class="btn" href="#flujo">Ver el flujo de trabajo</a>
+    </section>
+
+    <section id="que-es" class="card">
+      <h2>¿Qué es el control de versiones?</h2>
+      <p>Es un sistema que registra los cambios realizados en los archivos de un proyecto a lo largo del tiempo.
+        Permite volver a una versión anterior, comparar cambios y trabajar en equipo sin sobrescribir el trabajo de otras personas.</p>
+      <div class="grid">
+        <article>
+          <h3>Historial</h3>
+          <p>Cada <em>commit</em> es una fotografía del proyecto con autor, fecha y mensaje.</p>
+        </article>
+        <article>
+          <h3>Ramas</h3>
+          <p>Permiten desarrollar una función nueva sin afectar la versión estable (<code>main</code>).</p>
+        </article>
+        <article>
+          <h3>Colaboración</h3>
+          <p>Los <em>pull requests</em> ayudan a revisar y a integrar los cambios de forma ordenada.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="flujo" class="card">
+      <h2>Flujo de trabajo utilizado</h2>
+      <ol class="steps">
+        <li><strong>Crear una rama</strong> desde <code>main</code> para cada cambio (<code>feature/...</code>).</li>
+        <li><strong>Hacer commits</strong> pequeños con mensajes claros.</li>
+        <li><strong>Abrir un pull request</strong> hacia <code>main</code>; se ejecuta la revisión automática.</li>
+        <li><strong>Fusionar (merge)</strong> cuando la revisión es correcta.</li>
+        <li><strong>Desplegar</strong>: GitHub Actions publica el sitio en GitHub Pages.</li>
+        <li><strong>Etiquetar</strong> la versión estable con una etiqueta semántica (<code>v1.0.0</code>).</li>
+      </ol>
+    </section>
+
+    <section id="comandos" class="card">
+      <h2>Comandos principales de Git</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Comando</th><th>Para qué sirve</th></tr></thead>
+          <tbody>
+            <tr><td><code>git init</code></td><td>Inicia un repositorio local.</td></tr>
+            <tr><td><code>git clone &lt;url&gt;</code></td><td>Copia un repositorio remoto.</td></tr>
+            <tr><td><code>git status</code></td><td>Muestra el estado de los archivos.</td></tr>
+            <tr><td><code>git add .</code></td><td>Prepara los cambios para el commit.</td></tr>
+            <tr><td><code>git commit -m "mensaje"</code></td><td>Guarda los cambios en el historial.</td></tr>
+            <tr><td><code>git branch</code> / <code>git switch -c</code></td><td>Lista y crea ramas.</td></tr>
+            <tr><td><code>git merge</code></td><td>Une los cambios de una rama en otra.</td></tr>
+            <tr><td><code>git push</code> / <code>git pull</code></td><td>Envía y recibe cambios del remoto.</td></tr>
+            <tr><td><code>git tag v1.0.0</code></td><td>Marca una versión estable.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="automatizacion" class="card">
+      <h2>Automatización con GitHub Actions</h2>
+      <p>El repositorio tiene dos flujos de trabajo: uno de <strong>integración continua</strong> que revisa el sitio en cada
+        pull request, y otro de <strong>despliegue</strong> que publica el sitio en GitHub Pages cada vez que se actualiza la rama <code>main</code>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Elaborado por Adriel Arturo Solano Peraza · Universidad Tecnológica Riviera Maya</p>
+    <p class="version">Versión 1.0.0</p>
+  </footer>
+</body>
+</html>
